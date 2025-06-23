@@ -43,4 +43,11 @@ app.get('/progress', (req, res) => {
     res.json({ total: data.total });
 });
 
-app.listen(4242, () => console.log('Server avviato su http://localhost:4242'));
+
+// app.listen(4242, () => console.log('Server avviato su http://localhost:4242'));
+
+const PORT = process.env.PORT || 4242;
+app.listen(PORT, () => {
+    console.log(`✅ Server avviato su porta ${PORT}`);
+});
+
