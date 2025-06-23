@@ -22,8 +22,8 @@ app.post('/create-checkout-session', async (req, res) => {
             },
             quantity: 1,
         }],
-        success_url: 'http://localhost:4242/success?amount=' + amount,
-        cancel_url: 'http://localhost:4242/cancel',
+        success_url: `https://www.matteobucci.com/success?amount=${amount}`,
+        cancel_url: `https://www.matteobucci.com/cancel`,
     });
     res.json({ sessionId: session.id });
 });
