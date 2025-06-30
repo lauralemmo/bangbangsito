@@ -264,20 +264,24 @@
 
     <script>
         async function checkout(priceId) {
-            const res = await fetch('/create-checkout-session', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify({ priceId })
-            });
+            console.log("Checkout avviato per", priceId); // debug
+            try {
+                const res = await fetch('/create-checkout-session', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ priceId })
+                });
 
-            const data = await res.json();
+                const data = await res.json();
 
-            if (data.url) {
-                window.location = data.url;
-            } else {
-                alert("Errore durante il checkout. Riprova.");
+                if (data.url) {
+                    window.location = data.url; // ⬅️ REDIRECT AUTOMATICO
+                } else {
+                    alert("Errore: URL di pagamento non ricevuto.");
+                }
+            } catch (err) {
+                console.error("Errore nel checkout:", err);
+                alert("Errore imprevisto. Controlla la console.");
             }
         }
     </script>
