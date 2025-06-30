@@ -11,6 +11,7 @@
     <!-- Google Font Montserrat Black -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+
 </head>
 
 
@@ -70,7 +71,7 @@
     </script>
 
 
-    <script>
+    <!--<script>
         let totalRaised = 400; // euro raccolti
         let step = 1000;       // ogni milestone
 
@@ -91,7 +92,7 @@
         }
 
         updateProgressBar();
-    </script>
+    </script>-->
 
 
 
@@ -108,9 +109,18 @@
                 <button id="donateButton">Donate now</button>
 
                 <h2>Fundraising progress</h2>
-                <div class="progress-container">
-                    <div class="progress-bar" id="progressBar">0%</div>
+
+                <div class="progress-wrapper">
+                    <div class="progress-background">
+                        <div class="progress-fill" id="progressBar">
+                            <span id="progressText">€0.00 raccolti</span>
+                        </div>
+                    </div>
+                    <div class="progress-goal">Obiettivo: €10.000</div>
                 </div>
+
+
+
 
                 <script>
                     const stripe = Stripe("pk_live_51RZZVsDEGbrj1CVlzfWPmadoZtNYywRYkBfPzgqk1xtbhxFkvjeNXXXlNRxsgbvCTQNXpCnBEs6m5G2vPmvmlupc00jhn3WRDz");
@@ -129,19 +139,29 @@
                         stripe.redirectToCheckout({ sessionId: data.sessionId });
                     });
 
-                    // Aggiorna la barra di avanzamento
                     async function updateProgress() {
-                        const res = await fetch('/progress');
-                        const data = await res.json();
-                        const goal = 1000; // Obiettivo in euro
-                        const percentage = Math.min(100, (data.total / goal) * 100);
-                        const bar = document.getElementById('progressBar');
-                        bar.style.width = percentage + '%';
-                        bar.textContent = `${percentage.toFixed(1)}% (€${data.total.toFixed(2)})`;
+                        try {
+                            const response = await fetch('/progress');
+                            const data = await response.json();
+
+                            const total = parseFloat(data.total || 0);
+                            const goal = 10000;
+                            const percentage = Math.min((total / goal) * 100, 100).toFixed(1);
+
+                            const progressBar = document.getElementById('progressBar');
+                            const progressText = document.getElementById('progressText');
+
+                            progressBar.style.width = `${percentage}%`;
+                            progressText.textContent = `€${total.toFixed(2)} raccolti`;
+                        } catch (error) {
+                            console.error('Errore nel caricamento della barra di avanzamento:', error);
+                        }
                     }
 
-                    updateProgress();
+                    document.addEventListener("DOMContentLoaded", updateProgress);
+
                 </script>
+
 
             </div>
         </div>
@@ -192,18 +212,21 @@
 
     <div class="section section4">
         <div class="image-gallery">
+
+            <!-- Cappellino -->
             <div class="gallery-item">
-                <a href="#">
-                    <img src="cappellino.jpg" alt="Cappellino Bang Bang">
-                    <p class="caption">CAPPELLINO BANG BANG</p>
-                </a>
+                <img src="cappellino.jpg" alt="Cappellino Bang Bang">
+                <p class="caption">CAPPELLINO BANG BANG</p>
+                <button onclick="checkout('price_1RfinsDEGbrj1CVl0NIszDWQ')">Acquista</button>
             </div>
+
+            <!-- T-shirt -->
             <div class="gallery-item">
-                <a href="#">
-                    <img src="tshirt.jpg" alt="T-shirt Bang Bang">
-                    <p class="caption">T-SHIRT BANG BANG</p>
-                </a>
+                <img src="tshirt.jpg" alt="T-shirt Bang Bang">
+                <p class="caption">T-SHIRT BANG BANG</p>
+                <button onclick="checkout('price_1RfispDEGbrj1CVlvzznZtlM')">Acquista</button>
             </div>
+
         </div>
     </div>
 
@@ -235,6 +258,29 @@
 
     <div class="section section6">Section 6</div>
 
+
+
+
+
+    <script>
+        async function checkout(priceId) {
+            const res = await fetch('/create-checkout-session', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ priceId })
+            });
+
+            const data = await res.json();
+
+            if (data.url) {
+                window.location = data.url;
+            } else {
+                alert("Errore durante il checkout. Riprova.");
+            }
+        }
+    </script>
 
 
 
