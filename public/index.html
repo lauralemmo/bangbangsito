@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
 
+    <link rel="icon" type="image/png" href="immagini/immfavicon.png">
 </head>
 
 
@@ -30,12 +31,12 @@
 
         <a href="index.html" class="title">
             <span>MATTEO</span><br />
-            <span>BANG BANG</span>
+            <span>BANG ⚡ BANG</span>
         </a>
 
         <div class="language-switch">
-            <a href="index.html"><img src="immagini/it.png" alt="Italiano" /></a>
-            <a href="index_en.html"><img src="immagini/gb.png" alt="English" /></a>
+            <button data-lang="it"><img src="immagini/it.png" alt="Italiano" /></button>
+            <button data-lang="en"><img src="immagini/gb.png" alt="English" /></button>
         </div>
     </header>
 
@@ -45,13 +46,14 @@
         <div class="close-btn" id="closeMenu">×</div>
         <a href="index.html">HOME</a>
         <a href="myStory.html">MY STORY</a>
-        <a href="#shop">SHOP</a>
-        <a href="#media">MEDIA</a>
-        <a href="#contact">CONTACT</a>
+        <a href="shop.html">SHOP</a>
+        <a href="media.html">MEDIA</a>
+        <a href="contact.html">CONTACT</a>
         <div class="social-icons">
-            <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-            <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-            <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://www.instagram.com/mattbuccii?igsh=YzIwb29zNTh0dW04&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+            <a href="https://youtube.com/@matteobuccii?si=H3aIPn_Onwk3AWzc" target="_blank"><i class="fab fa-youtube"></i></a>
+            <a href="https://www.tiktok.com/@matteobucci_?_t=ZN-8xqrzeHPBeo&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+            <a href="https://strava.app.link/QNEIClmAPUb" target="_blank"><i class="fab fa-strava"></i></a>
         </div>
     </nav>
 
@@ -71,57 +73,36 @@
     </script>
 
 
-    <!--<script>
-        let totalRaised = 400; // euro raccolti
-        let step = 1000;       // ogni milestone
-
-        function updateProgressBar() {
-            const fill = document.getElementById('progressFill');
-            const milestone = document.getElementById('milestone');
-            const amountRaised = document.getElementById('amountRaised');
-            const rangeStart = document.getElementById('rangeStart');
-
-            const currentStep = Math.floor(totalRaised / step) * step;
-            const nextStep = currentStep + step;
-            const percentage = ((totalRaised - currentStep) / step) * 100;
-
-            fill.style.width = percentage + '%';
-            milestone.textContent = `/ ${nextStep} €`;
-            rangeStart.textContent = currentStep;
-            amountRaised.textContent = `${totalRaised} € raccolti`;
-        }
-
-        updateProgressBar();
-    </script>-->
-
-
-
 
     <!-- Sezioni -->
     <div class="section section1">
         <div class="content">
             <div class="text-left">
-                <h1>ARCTIC to FLORENCE</h1>
-                <p class="subtitle">75 marathons in 50 days for those who can’t afford to stop</p>
+                <h1 data-key="title">ARCTIC to FLORENCE</h1>
+                <p data-key="subtitle" class="subtitle">75 marathons in 50 days for those who can’t afford to stop</p>
 
-                <h1>Donate now</h1>
-                <input type="number" id="amount" placeholder="Inserisci importo €" min="1">
-                <button id="donateButton">Donate now</button>
+<!--                <h1 data-key="donateNow" >Donate now</h1>-->
+                <input type="number" id="amount" placeholder="€" min="1">
+                <button id="donateButton">
+                    <span data-key="donateNow" class="button-text">Donate now</span>
+                    <span class="button-icon"><i class="fas fa-credit-card"></i></span>
+                </button>
 
-                <h2>Fundraising progress</h2>
+                <br><br>
 
-                <div class="progress-wrapper">
-                    <div class="progress-background">
-                        <div class="progress-fill" id="progressBar">
-                            <span id="progressText">€0.00 raccolti</span>
-                        </div>
+                <h2 data-key="fundraisingProgress">Fundraising progress</h2>
+
+                <div id="progress-container">
+                    <progress id="donationProgress" value="0" max="10000"></progress>
+                    <div id="donation-detail">
+                        <span data-key="totalCollected" id="total">Total collected: €0</span>
+                        <span data-key="goal">Goal: €10000</span>
                     </div>
-                    <div class="progress-goal">Obiettivo: €10.000</div>
                 </div>
 
 
 
-
+                <script src="https://js.stripe.com/v3/"></script>
                 <script>
                     const stripe = Stripe("pk_live_51RZZVsDEGbrj1CVlzfWPmadoZtNYywRYkBfPzgqk1xtbhxFkvjeNXXXlNRxsgbvCTQNXpCnBEs6m5G2vPmvmlupc00jhn3WRDz");
 
@@ -141,25 +122,20 @@
 
                     async function updateProgress() {
                         try {
-                            const response = await fetch('/progress');
-                            const data = await response.json();
+                            const res = await fetch('/total-donated');
+                            const data = await res.json();
+                            const total = data.total || 0;
+                            const goal = 1000;
 
-                            const total = parseFloat(data.total || 0);
-                            const goal = 10000;
-                            const percentage = Math.min((total / goal) * 100, 100).toFixed(1);
-
-                            const progressBar = document.getElementById('progressBar');
-                            const progressText = document.getElementById('progressText');
-
-                            progressBar.style.width = `${percentage}%`;
-                            progressText.textContent = `€${total.toFixed(2)} raccolti`;
-                        } catch (error) {
-                            console.error('Errore nel caricamento della barra di avanzamento:', error);
+                            document.getElementById('donationProgress').value = total > goal ? goal : total;
+                            const lang = localStorage.getItem('lang') || 'en';
+                            document.getElementById('total').textContent = lang === 'it' ? `Totale raccolto: €${total.toFixed(2)}` : `Total collected: €${total.toFixed(2)}`;
+                        } catch (err) {
+                            console.error('Errore aggiornando la progress bar:', err);
                         }
                     }
-
-                    document.addEventListener("DOMContentLoaded", updateProgress);
-
+                    updateProgress();
+                    setInterval(updateProgress, 30000); // Aggiorna ogni 30s
                 </script>
 
 
@@ -176,12 +152,12 @@
         <div class="content">
             <div class="text-left">
 
-                <h1>THE CHARITY</h1>
-                <p class="subtitle">Every euro matters.
+                <h1 data-key="charity">THE CHARITY</h1>
+                <p data-key="everyEuroMatters" class="subtitle">Every euro matters.
                     100% of what you give goes straight to providing food and essential supplies to families in need, through Pane Quotidiano Firenze.
                     Your donation is real help.
                 </p>
-                <a href="#" class="btn">LEARN MORE</a>
+                <a data-key="learnMore" href="#" class="btn">LEARN MORE</a>
 
             </div>
         </div>
@@ -196,8 +172,8 @@
         <div class="content">
             <div class="text-left">
 
-                <h1>THE MISSION</h1>
-                <p class="subtitle">75 marathons in 50 days. From the Arctic Circle (Rovaniemi, Finland) to Florence, Italy.
+                <h1 data-key="mission">THE MISSION</h1>
+                <p data-key="marathons" class="subtitle">75 marathons in 50 days. From the Arctic Circle (Rovaniemi, Finland) to Florence, Italy.
                     A 3200 km journey with the goal of raising €10,000 for Pane Quotidiano Firenze and to inspire anyone achieving their dreams, one step at a time.
                 </p>
 
@@ -210,84 +186,46 @@
 
 
 
-    <div class="section section4">
-        <div class="image-gallery">
+    <div class="section section4" style="height: auto; padding-bottom: 100px;">
 
-            <!-- Cappellino -->
-            <div class="gallery-item">
-                <img src="cappellino.jpg" alt="Cappellino Bang Bang">
-                <p class="caption">CAPPELLINO BANG BANG</p>
-                <button onclick="checkout('price_1RfinsDEGbrj1CVl0NIszDWQ')">Acquista</button>
-            </div>
-
-            <!-- T-shirt -->
-            <div class="gallery-item">
-                <img src="tshirt.jpg" alt="T-shirt Bang Bang">
-                <p class="caption">T-SHIRT BANG BANG</p>
-                <button onclick="checkout('price_1RfispDEGbrj1CVlvzznZtlM')">Acquista</button>
-            </div>
-
-        </div>
-    </div>
-
-
-
-
-
-    <div class="section section5">
         <div class="content">
             <div class="text-left">
 
-                <h1>TRACKER</h1>
-                <p class="subtitle">
-                    <a href="#" class="link-highlight">here</a> you can follow me in real time!
-                </p>
+                <h1 data-key="tshirt">THE BANG BANG T-SHIRT</h1>
+
+                <a href="shop.html">
+                    <picture>
+                        <source srcset="immagini/tshirt-mobile.jpg" media="(max-width: 480px)">
+                        <source srcset="immagini/tshirt-tablet.jpg" media="(max-width: 1280px)">
+                        <img src="immagini/tshirt-desktop.jpg" alt="Immagine responsive" class="box">
+                    </picture>
+                </a>
+                <a data-key="goToShop" href="shop.html" class="btn" style="margin-top: 30px; width: 100%; text-align: center;">GO TO SHOP</a>
+                
+                <!--<div class="image-gallery">
+                    <a href="shop.html">
+                        <img src="immagini/colorimagliette.png">
+                    </a>
+                </div>-->
 
             </div>
-
-            <div class="tracker-image">
-                <img src="immagini/Google%20Maps%20-%20Terrain.png">
-            </div>
-
         </div>
     </div>
 
 
+    <div id="footer">
+        <span data-key="powered">Powered by </span>
+        <span style="font-family: 'Montserrat', sans-serif;">Laura Lemmo</span> 
+        <span>
+            <a href="https://www.linkedin.com/in/laura-lemmo-846070374/" target="_blank">
+                <img src="immagini/linkedin-icon.png" style="width: 21px; vertical-align: middle; margin-left: 10px;">
+            </a>
+        </span>
+    </div>
 
 
-
-    <div class="section section6">Section 6</div>
-
-
-
-
-
-    <script>
-        async function checkout(priceId) {
-            console.log("Checkout avviato per", priceId); // debug
-            try {
-                const res = await fetch('/create-checkout-session', {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({ priceId })
-                });
-
-                const data = await res.json();
-
-                if (data.url) {
-                    window.location = data.url; // ⬅️ REDIRECT AUTOMATICO
-                } else {
-                    alert("Errore: URL di pagamento non ricevuto.");
-                }
-            } catch (err) {
-                console.error("Errore nel checkout:", err);
-                alert("Errore imprevisto. Controlla la console.");
-            }
-        }
-    </script>
-
-
-
+    <script src="translations.js"></script>
+    <script src="language.js"></script>
 
 </body>
 </html>

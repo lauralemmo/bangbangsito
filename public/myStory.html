@@ -9,6 +9,8 @@
     <!-- Google Font Montserrat Black -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" type="image/png" href="immagini/immfavicon.png">
 </head>
 
 
@@ -26,12 +28,12 @@
 
     <a href="index.html" class="title">
         <span>MATTEO</span><br />
-        <span>BANG BANG</span>
+        <span>BANG ⚡ BANG</span>
     </a>
 
     <div class="language-switch">
-        <a href="index.html"><img src="immagini/it.png" alt="Italiano" /></a>
-        <a href="index_en.html"><img src="immagini/gb.png" alt="English" /></a>
+        <button data-lang="it"><img src="immagini/it.png" alt="Italiano" /></button>
+        <button data-lang="en"><img src="immagini/gb.png" alt="English" /></button>
     </div>
 </header>
 
@@ -40,13 +42,14 @@
     <div class="close-btn" id="closeMenu">×</div>
     <a href="index.html">HOME</a>
     <a href="myStory.html">MY STORY</a>
-    <a href="#shop">SHOP</a>
-    <a href="#media">MEDIA</a>
-    <a href="#contact">CONTACT</a>
+    <a href="shop.html">SHOP</a>
+    <a href="media.html">MEDIA</a>
+    <a href="contact.html">CONTACT</a>
     <div class="social-icons">
-        <a href="https://www.instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
-        <a href="https://www.youtube.com" target="_blank"><i class="fab fa-youtube"></i></a>
-        <a href="https://www.tiktok.com" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://www.instagram.com/mattbuccii?igsh=YzIwb29zNTh0dW04&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@matteobuccii?si=H3aIPn_Onwk3AWzc" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@matteobucci_?_t=ZN-8xqrzeHPBeo&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://strava.app.link/QNEIClmAPUb" target="_blank"><i class="fab fa-strava"></i></a>
     </div>
 </nav>
 
@@ -70,38 +73,42 @@
 
 
 
-<div class="section section1b">
-    <div class="content"></div>
+<div class="section-story section1b">
+    <!--<div class="content"></div>-->
+    <video autoplay muted loop playsinline>
+        <source src="video/video1.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
 </div>
 
 
-<div class="section section2b">
-    <div class="text">
+<div class="section-story section2b">
+    <div data-key="itsNotWhere" class="text">
             It’s not where you start, but how you respond every day.
     </div>
 </div>
 
 
-<div class="section section3b">
+<div class="section-story section3b">
     <div class="content"></div>
 </div>
 
 
-<div class="section section2b">
-    <div class="text">
+<div class="section-story section2b">
+    <div data-key="afterMyFirstMarathon" class="text">
         After my first marathon, I never stopped: the struggle became my way to get to know myself,
         and running became my tool to fight my inner demons.
     </div>
 </div>
 
 
-<div class="section section5b">
+<div class="section-story section5b">
     <div class="content"></div>
 </div>
 
 
-<div class="section section2b">
-    <div class="text">
+<div class="section-story section2b">
+    <div data-key="whileDoing" class="text">
         While doing an internship in California, a friend sent me a reel of Russ Cook running across Africa,
         raising one million pounds for charity. That video struck me deeply —
         seeing someone push their limits for a greater cause planted a seed in my mind.
@@ -109,26 +116,26 @@
 </div>
 
 
-<div class="section section7b">
+<div class="section-story section7b">
     <div class="content"></div>
 </div>
 
 
-<div class="section section2b">
-    <div class="text">
+<div class="section-story section2b">
+    <div data-key="iRealized" class="text">
         I realized that I too wanted to embark on an adventure that could turn my personal story
-        into something bigger, something that might empower others
+        into something bigger, something that might empower others.
     </div>
 </div>
 
 
-<div class="section section9b">
+<div class="section-story section9b">
     <div class="content"></div>
 </div>
 
 
-<div class="section section2b">
-    <div class="text">
+<div class="section-story section2b">
+    <div data-key="thisIsHow" class="text">
         This is how ARCTIC to FLORENCE was born:
         75 marathons in 50 days, covering over 3,200 km.
         Not just to prove that with courage and commitment you can break through your own limits,
@@ -137,11 +144,25 @@
 </div>
 
 
-<div class="section section11b">
-    <div class="content"></div>
+<div class="section-story section11b">
+    <video autoplay muted loop playsinline>
+        <source src="video/video2.mp4" type="video/mp4">
+        Il tuo browser non supporta il tag video.
+    </video>
 </div>
 
+<div id="footer">
+        <span data-key="powered">Powered by </span>
+        <span style="font-family: 'Montserrat', sans-serif;">Laura Lemmo</span> 
+        <span>
+            <a href="https://www.linkedin.com/in/laura-lemmo-846070374/" target="_blank">
+                <img src="immagini/linkedin-icon.png" style="width: 21px; vertical-align: middle; margin-left: 10px;">
+            </a>
+        </span>
+    </div>
 
+<script src="translations.js"></script>
+<script src="language.js"></script>
 
 </body>
 </html>
