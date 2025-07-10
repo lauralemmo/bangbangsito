@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="it">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matteo Bang Bang</title>
+
+    <!-- Google Font Montserrat Black -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" type="image/png" href="immagini/immfavicon.png">
+</head>
+
+
+
+
+<body style="background-color: #3b62a5; font-family: 'Montserrat', sans-serif;">
+
+<!-- Navbar Fissa -->
+<header class="navbar">
+    <div class="menu-icon" id="menuIcon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <a href="index.html" class="title">
+        <span>MATTEO</span><br />
+        <span>BANG ⚡ BANG</span>
+    </a>
+
+    <div class="language-switch">
+        <button data-lang="it"><img src="immagini/it.png" alt="Italiano" /></button>
+        <button data-lang="en"><img src="immagini/gb.png" alt="English" /></button>
+    </div>
+</header>
+
+<!-- Menu aperto -->
+<nav class="menu-links" id="menuLinks">
+    <div class="close-btn" id="closeMenu">×</div>
+    <a href="index.html">HOME</a>
+    <a href="myStory.html">MY STORY</a>
+    <a href="shop.html">SHOP</a>
+    <a href="media.html">MEDIA</a>
+    <a href="contact.html">CONTACT</a>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/mattbuccii?igsh=YzIwb29zNTh0dW04&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@matteobuccii?si=H3aIPn_Onwk3AWzc" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@matteobucci_?_t=ZN-8xqrzeHPBeo&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://strava.app.link/QNEIClmAPUb" target="_blank"><i class="fab fa-strava"></i></a>
+    </div>
+</nav>
+
+
+<script>
+    const menuIcon = document.getElementById('menuIcon');
+    const menuLinks = document.getElementById('menuLinks');
+    const closeMenu = document.getElementById('closeMenu');
+
+    menuIcon.addEventListener('click', () => {
+        menuLinks.style.display = 'flex';
+    });
+
+    closeMenu.addEventListener('click', () => {
+        menuLinks.style.display = 'none';
+    });
+</script>
+
+
+
+<div class="section section2c">
+    <div data-key="theOfficialTShirt" class="text">
+        The official BANG ⚡ BANG T-shirt.
+        Designed to be there when you need that extra push — when you want to go further, when you need energy, when you're ready to break your limits.
+        This is the same T-shirt Matteo will wear during his journey from the Arctic Circle to Florence.
+        Lightweight, comfortable, made from 100% high-quality cotton — always ready to remind you why you started.
+    </div>
+</div>
+
+
+
+<div class="product-container">
+    <div id='product-component-1751472475667' class="product"></div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        (function () {
+            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+            if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                    ShopifyBuyInit();
+                } else {
+                    loadScript();
+                }
+            } else {
+                loadScript();
+            }
+            function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+            }
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'h00uuz-yi.myshopify.com',
+                    storefrontAccessToken: '3bdd0d8398702fc805ee7ddc28b1a7fe',
+                });
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                    ui.createComponent('product', {
+                        id: '15236547903862',
+                        node: document.getElementById('product-component-1751472475667'),
+                        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+                        options: {
+                            "product": {
+                                "styles": {
+                                    "product": {
+                                        "color": "#ffffff", 
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "calc(25% - 20px)",
+                                            "margin-left": "20px",
+                                            "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "title": {
+                                        "color": "#ffffff",
+                                        "font-size": "14px",
+                                    },
+                                    "price": {
+                                        "color": "#ffffff",
+                                        "font-size": "18px",
+                                        "font-weight": "900",
+                                    },
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "productSet": {
+                                "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                            "margin-left": "-20px"
+                                        }
+                                    }
+                                }
+                            },
+                            "modalProduct": {
+                                "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "button": false,
+                                    "buttonWithQuantity": true
+                                },
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "100%",
+                                            "margin-left": "0px",
+                                            "margin-bottom": "0px"
+                                        }
+                                    }
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "option": {},
+                            "cart": {
+                                "text": {
+                                    "total": "Subtotal",
+                                    "button": "Checkout"
+                                }
+                            },
+                            "toggle": {}
+                        },
+                    });
+                });
+            }
+        })();
+        /*]]>*/
+    </script>
+
+
+    <div id='product-component-1751472541509' class="product"></div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        (function () {
+            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+            if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                    ShopifyBuyInit();
+                } else {
+                    loadScript();
+                }
+            } else {
+                loadScript();
+            }
+            function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+            }
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'h00uuz-yi.myshopify.com',
+                    storefrontAccessToken: '3bdd0d8398702fc805ee7ddc28b1a7fe',
+                });
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                    ui.createComponent('product', {
+                        id: '15236697096566',
+                        node: document.getElementById('product-component-1751472541509'),
+                        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+                        options: {
+                            "product": {
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "calc(25% - 20px)",
+                                            "margin-left": "20px",
+                                            "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "title": {
+                                        "color": "#ffffff",
+                                        "font-size": "14px",
+                                    },
+                                    "price": {
+                                        "color": "#ffffff",
+                                        "font-size": "18px",
+                                        "font-weight": "900",
+                                    },
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "productSet": {
+                                "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                            "margin-left": "-20px"
+                                        }
+                                    }
+                                }
+                            },
+                            "modalProduct": {
+                                "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "button": false,
+                                    "buttonWithQuantity": true
+                                },
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "100%",
+                                            "margin-left": "0px",
+                                            "margin-bottom": "0px"
+                                        }
+                                    }
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "option": {},
+                            "cart": {
+                                "text": {
+                                    "total": "Subtotal",
+                                    "button": "Checkout"
+                                }
+                            },
+                            "toggle": {}
+                        },
+                    });
+                });
+            }
+        })();
+        /*]]>*/
+    </script>
+
+
+
+    <div id='product-component-1751472624469' class="product"></div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        (function () {
+            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+            if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                    ShopifyBuyInit();
+                } else {
+                    loadScript();
+                }
+            } else {
+                loadScript();
+            }
+            function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+            }
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'h00uuz-yi.myshopify.com',
+                    storefrontAccessToken: '3bdd0d8398702fc805ee7ddc28b1a7fe',
+                });
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                    ui.createComponent('product', {
+                        id: '15236701061494',
+                        node: document.getElementById('product-component-1751472624469'),
+                        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+                        options: {
+                            "product": {
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "calc(25% - 20px)",
+                                            "margin-left": "20px",
+                                            "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "title": {
+                                        "color": "#ffffff",
+                                        "font-size": "14px",
+                                    },
+                                    "price": {
+                                        "color": "#ffffff",
+                                        "font-size": "18px",
+                                        "font-weight": "900",
+                                    },
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "productSet": {
+                                "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                            "margin-left": "-20px"
+                                        }
+                                    }
+                                }
+                            },
+                            "modalProduct": {
+                                "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "button": false,
+                                    "buttonWithQuantity": true
+                                },
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "100%",
+                                            "margin-left": "0px",
+                                            "margin-bottom": "0px"
+                                        } 
+                                    },
+                                    "title": {
+                                        "color": "#ffffff" 
+                                    },
+                                    "price": {
+                                        "color": "#ffffff" 
+                                    },
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "option": {},
+                            "cart": {
+                                "text": {
+                                    "total": "Subtotal",
+                                    "button": "Checkout"
+                                }
+                            },
+                            "toggle": {}
+                        },
+                    });
+                });
+            }
+        })();
+        /*]]>*/
+    </script>
+
+
+    <div id='product-component-1751472749819' class="product"></div>
+    <script type="text/javascript">
+        /*<![CDATA[*/
+        (function () {
+            var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+            if (window.ShopifyBuy) {
+                if (window.ShopifyBuy.UI) {
+                    ShopifyBuyInit();
+                } else {
+                    loadScript();
+                }
+            } else {
+                loadScript();
+            }
+            function loadScript() {
+                var script = document.createElement('script');
+                script.async = true;
+                script.src = scriptURL;
+                (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+                script.onload = ShopifyBuyInit;
+            }
+            function ShopifyBuyInit() {
+                var client = ShopifyBuy.buildClient({
+                    domain: 'h00uuz-yi.myshopify.com',
+                    storefrontAccessToken: '3bdd0d8398702fc805ee7ddc28b1a7fe',
+                });
+                ShopifyBuy.UI.onReady(client).then(function (ui) {
+                    ui.createComponent('product', {
+                        id: '15236698538358',
+                        node: document.getElementById('product-component-1751472749819'),
+                        moneyFormat: '%E2%82%AC%7B%7Bamount_with_comma_separator%7D%7D',
+                        options: {
+                            "product": {
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "calc(25% - 20px)",
+                                            "margin-left": "20px",
+                                            "margin-bottom": "50px"
+                                        }
+                                    },
+                                    "title": {
+                                        "color": "#ffffff",
+                                        "font-size": "14px",
+                                    },
+                                    "price": {
+                                        "color": "#ffffff",
+                                        "font-size": "18px",
+                                        "font-weight": "900",
+                                    },
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "productSet": {
+                                "styles": {
+                                    "products": {
+                                        "@media (min-width: 601px)": {
+                                            "margin-left": "-20px"
+                                        }
+                                    }
+                                }
+                            },
+                            "modalProduct": {
+                                "contents": {
+                                    "img": false,
+                                    "imgWithCarousel": true,
+                                    "button": false,
+                                    "buttonWithQuantity": true
+                                },
+                                "styles": {
+                                    "product": {
+                                        "@media (min-width: 601px)": {
+                                            "max-width": "100%",
+                                            "margin-left": "0px",
+                                            "margin-bottom": "0px"
+                                        }
+                                    }
+                                },
+                                "text": {
+                                    "button": "Add to cart"
+                                }
+                            },
+                            "option": {},
+                            "cart": {
+                                "text": {
+                                    "total": "Subtotal",
+                                    "button": "Checkout"
+                                }
+                            },
+                            "toggle": {}
+                        },
+                    });
+                });
+            }
+        })();
+        /*]]>*/
+    </script>
+</div>
+
+<div style="background-color: #3b62a5; height: 200px;"></div>
+
+<div id="footer">
+        <span data-key="powered">Powered by </span>
+        <span style="font-family: 'Montserrat', sans-serif;">Laura Lemmo</span> 
+        <span>
+            <a href="https://www.linkedin.com/in/laura-lemmo-846070374/" target="_blank">
+                <img src="immagini/linkedin-icon.png" style="width: 21px; vertical-align: middle; margin-left: 10px;">
+            </a>
+        </span>
+    </div>
+
+<script src="translations.js"></script>
+<script src="language.js"></script>
+
+</body>
+</html>

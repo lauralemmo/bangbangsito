@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matteo Bang Bang</title>
+
+    <!-- Google Font Montserrat Black -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css" />
+
+    <link rel="icon" type="image/png" href="immagini/immfavicon.png">
+</head>
+
+
+
+
+<body style="background-color: #385e9d;">
+
+<!-- Navbar Fissa -->
+<header class="navbar">
+    <div class="menu-icon" id="menuIcon">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+    <a href="index.html" class="title">
+        <span>MATTEO</span><br />
+        <span>BANG ⚡ BANG</span>
+    </a>
+
+    <div class="language-switch">
+        <button data-lang="it"><img src="immagini/it.png" alt="Italiano" /></button>
+        <button data-lang="en"><img src="immagini/gb.png" alt="English" /></button>
+    </div>
+</header>
+
+<!-- Menu aperto -->
+<nav class="menu-links" id="menuLinks">
+    <div class="close-btn" id="closeMenu">×</div>
+    <a href="index.html">HOME</a>
+    <a href="myStory.html">MY STORY</a>
+    <a href="shop.html">SHOP</a>
+    <a href="media.html">MEDIA</a>
+    <a href="contact.html">CONTACT</a>
+    <div class="social-icons">
+        <a href="https://www.instagram.com/mattbuccii?igsh=YzIwb29zNTh0dW04&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/@matteobuccii?si=H3aIPn_Onwk3AWzc" target="_blank"><i class="fab fa-youtube"></i></a>
+        <a href="https://www.tiktok.com/@matteobucci_?_t=ZN-8xqrzeHPBeo&_r=1" target="_blank"><i class="fab fa-tiktok"></i></a>
+        <a href="https://strava.app.link/QNEIClmAPUb" target="_blank"><i class="fab fa-strava"></i></a>
+    </div>
+</nav>
+
+
+<script>
+    const menuIcon = document.getElementById('menuIcon');
+    const menuLinks = document.getElementById('menuLinks');
+    const closeMenu = document.getElementById('closeMenu');
+
+    menuIcon.addEventListener('click', () => {
+        menuLinks.style.display = 'flex';
+    });
+
+    closeMenu.addEventListener('click', () => {
+        menuLinks.style.display = 'none';
+    });
+</script>
+
+
+
+
+<div style="text-align: center;">
+
+    <div style="height: 100px;"></div>
+
+    <!--<div data-key="contact" class="text">
+        To contact me:
+    </div>
+
+    <div style="height: 150px;"></div>
+
+    <form action="https://formspree.io/f/mowwoddg" method="POST">
+        <label data-key="name" for="name">Name</label>
+        <input type="text" id="amount" name="name" required placeholder="your name">
+
+        <div style="height: 70px;"></div>
+
+        <label for="email">Email</label>
+        <input type="email" id="amount" name="email" required placeholder="your@email.com">
+
+        <div style="height: 70px;"></div>
+
+        <label data-key="text" for="message">Text</label>
+        <textarea id="amount" name="message" required placeholder="..."></textarea>
+
+        <input type="text" name="_gotcha" style="display:none">
+
+        <input type="hidden" name="_redirect" value="https://www.matteobucci.com/index.html">
+
+        <div style="height: 100px;"></div>
+
+        <button data-key="send" type="submit" id="amount">Send</button>
+    </form>-->
+
+    <div id="contact-section">
+        <div class="contact-title" data-key="contact">
+            To contact me
+        </div>
+
+        <img src="immagini/Email-icon.png" style="width: 100px; margin-bottom: 30px;">
+
+        <form action="https://formspree.io/f/mowwoddg" method="POST" class="contact-form">
+            <div class="form-group">
+                <label data-key="name" for="name" class="form-label">Name</label>
+                <input type="text" id="name" name="name" class="form-input" required placeholder="your name">
+            </div>
+
+            <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input type="email" id="email" name="email" class="form-input" required placeholder="your@email.com">
+            </div>
+
+            <div class="form-group">
+                <label data-key="text" for="message" class="form-label">Text</label>
+                <textarea id="message" name="message" class="form-textarea" required placeholder="..."></textarea>
+            </div>
+
+            <!-- Anti-spam -->
+            <input type="text" name="_gotcha" class="hidden-field">
+
+            <!-- Redirect -->
+            <input type="hidden" name="_redirect" value="https://www.matteobucci.com/index.html">
+
+            <button data-key="send" type="submit" class="contact-submit">Send</button>
+        </form>
+    </div>
+
+
+</div>
+
+
+
+<div style="height: 100px;"></div>
+
+<div id="footer">
+        <span data-key="powered">Powered by </span>
+        <span style="font-family: 'Montserrat', sans-serif;">Laura Lemmo</span> 
+        <span>
+            <a href="https://www.linkedin.com/in/laura-lemmo-846070374/" target="_blank">
+                <img src="immagini/linkedin-icon.png" style="width: 21px; vertical-align: middle; margin-left: 10px;">
+            </a>
+        </span>
+    </div>
+
+
+<script src="translations.js"></script>
+<script src="language.js"></script>
+
+</body>
+</html>
