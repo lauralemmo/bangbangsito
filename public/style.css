@@ -85,7 +85,7 @@ body {
 
 .menu-links a {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500;
+    font-weight: 700;
     font-size: 1.2rem;
     color: #000;
     text-decoration: none;
@@ -201,7 +201,7 @@ body {
 .section1 {
     background-image: url('immagini/Hero Image Website  (1).jpg');
     background-size: cover; /* Per coprire tutto il div */
-    background-position: center;
+    background-position: right;
 }
 
 
@@ -310,7 +310,7 @@ h1 {
 
 .subtitle {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 500; /* Medium */
+    font-weight: 400; /* Medium */
     font-size: 1.5rem;
     margin-bottom: 30px;
 }
@@ -439,12 +439,18 @@ h2 {
 
 .text {
     font-family: 'Montserrat', sans-serif;
+    font-weight: 900;
     font-size: 24px;
     margin-left: 100px;
     margin-right: 100px;
     line-height: 1.6;
-    color: white;
+    color: #eeeae1;
 }
+
+.nb {
+    font-weight: 400;
+}
+
 /* Sotto i 1500px: margini ridotti e font leggermente più piccolo */
 @media (max-width: 1500px) {
   .text {

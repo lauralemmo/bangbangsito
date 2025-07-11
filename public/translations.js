@@ -1,7 +1,7 @@
 const translations = {
   it: {
     title: "Dall'ARTICO a FIRENZE",
-    subtitle: "75 maratone in 50 giorni per chi non può permettersi di fermarsi",
+    subtitle: "Correre 75 maratone in 50 giorni per chi non può permettersi di fermarsi",
     donateNow: "Dona ora",
     fundraisingProgress: "Progressi raccolta fondi",
     totalCollected: "Totale raccolto: €0",
@@ -44,7 +44,7 @@ const translations = {
 
   en: {
     title: "ARCTIC to FLORENCE",
-    subtitle: "75 marathons in 50 days for those who can’t afford to stop",
+    subtitle: "Running 75 marathons in 50 days for those who can’t afford to stop",
     donateNow: "Donate now",
     fundraisingProgress: "Fundraising progress",
     totalCollected: "Total collected: €0",
