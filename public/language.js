@@ -3,7 +3,7 @@ function changeLanguage(lang) {
   elements.forEach(el => {
     const key = el.getAttribute('data-key');
     if (translations[lang][key]) {
-      el.textContent = translations[lang][key];
+      el.innerHTML = translations[lang][key];
     }
   });
   localStorage.setItem('lang', lang);
