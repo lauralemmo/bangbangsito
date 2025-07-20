@@ -55,7 +55,7 @@ const translations = {
     everyEuroMatters: "<b>Every euro matters.</b><br>" +
         "                    100% of what you give goes straight to providing food and essential supplies to families in need, " +
         "through <b>Pane Quotidiano Firenze</b>. <br> <br>" +
-        "                    <b>Your donation is real help.</b>",
+        "                    <b>Your donation is a real help.</b>",
     learnMore: "LEARN MORE",
     mission: "THE MISSION",
     marathons: "<b>75 marathons in 50 days.</b> <br> From the Arctic Circle (Rovaniemi, Finland) to Florence, Italy.<br>" +
